@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/tem.css"/>
+    <link rel="shortcut icon" type="icon" href="../static/icoclima.ico"/>
+    <title>OnWeather</title>
+
+</head>
+    <body>
+    <div id="cuerpo">
+            <div id="pane1">
+                <div id="onweather">
+                    <h1><b>OnWeather</b></h1>
+                </div>
+                <div id="texto">
+                    <form method="POST" action="/temperatura">
+                        <input type="text" name="ciudad" style="font-size:19px" required="required">
+                        <div id="botonlupa">
+                            <input type="image" src="../static/lupa.png" height="22px" width="22px">
+                        </div>
+                    </form>
+                </div>
+                <div id="actual">
+                    <h2>{{ nom }}</h2>
+                </div>
+            </div>
+
+        <div id="cuadro">
+            <div id="indicadores">
+                {% if esta == "Clear" %}
+                    <p><img src="../static/sol.png" height="150px" width="150px"></p>
+                {% elif esta == "Rain" %}
+                    <p><img src="../static/rain.png" height="150px" width="150px"></p>
+                {% elif esta == "Clouds" %}
+                    <p><img src="../static/nubes.png" height="150px" width="150px"></p>
+                {% elif esta == "Fog" %}
+                    <p><img src="../static/fog.png" height="150px" width="150px"></p>
+                {% else %}
+                    <p><img src="../static/nosesabe.png" height="150px" width="150px"></p>
+                {% endif %}
+            </div>
+            <div id="tempe">
+                <p style="color:black">{{ temp3 }}<small>°C</small></p>
+            </div>
+            <div id="dato">
+                <h1 style="color:black"><strong>{{ esta }}</strong></h1>
+            </div>
+            <div id="cajaddatos">
+                <p><h3><strong>{{ wi }} Mp/h</strong></h3></p>
+                <p><h3><strong>Humedad: {{ hu }}%</strong></h3></p>
+            </div>
+            <div id="cajaddatos2">
+                <p><h3><strong>Temp. Min: {{ temp2 }}°C</strong></h3></p>
+                <p><h3><strong>Temp. Max: {{ temp1 }}°C</strong></h3></p>
+            </div>
+            <div id="region">
+                <p><h3><strong>{{ nom}}, {{ lugarr }}</strong></h3></p>
+            </div>
+        </div>
+        <div id="abajo">
+        </div>
+    </div>
+    </body>
+</html>
