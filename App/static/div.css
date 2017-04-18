@@ -9,7 +9,7 @@ div#cuerpo{
     position:absolute;
     width:100%;
     height:800px;
-    background-image:url(../static/fondo.jpg);
+    background-image:url(../static/fondoclima.jpg);
     background-size:100%;
     background-repeat:no-repeat;
     background-attachment:fixed;
@@ -28,6 +28,11 @@ div#onweather{
     font: bold 130% monospace;
     left:100px;
     top:40px;
+}
+div#vacio{
+    position:absolute;
+    left:95px;
+    top:45px;
 }
 div#texto{
     position:absolute;
@@ -57,13 +62,36 @@ div#cuadro{
     margin:auto;
     margin-top:240px;
     position:absolute;
-    width:300px;
-    height:250px;
-    left:525px;
+    width:500px;
+    height:100px;
+    left:425px;
     background-color:#fff;
     opacity:0.6;
     color:#000;
     border-radius:10px;
+    font: bold 130% monospace;
+}
+div#cuadrito{
+    margin:auto;
+    margin-top:20px;
+    margin-left:20px;
+    margin-right:20px;
+    position:absolute;
+    color:black;
+}
+div#cajaabajo{
+    margin:auto;
+    margin-top:10px;
+    position:absolute;
+    left:37%;
+    color:black;
+}
+div#cajaabajo2{
+    margin:auto;
+    margin-top:26px;
+    position:absolute;
+    left:45%;
+    color:black;
 }
 div#abajo{
     margin:auto;
@@ -72,7 +100,7 @@ div#abajo{
     width:100%;
     height:50px;
     background-color:#fff;
-    opacity:0.1;
+    opacity:0.5;
     color:#000;
     border-top-left-radius:10px;
     border-top-right-radius:10px;

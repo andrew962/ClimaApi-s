@@ -1,44 +1,41 @@
+"""
+Este Archivo llamado api.py fue el utilizado para hacer las pruebas unitarias,
+Utilisamos este para poder tener una utilizacion mas facil de las variables a usar.
+"""
+
+"""
+:pyown libreria: Libreria utilizada para el uso de las Api
+"""
 import pyowm
 
-owm = pyowm.OWM('ce688b67bbf90c2a0236d4eb23d8c7bd')  # You MUST provide a valid API key
+"""
+:var own: Aqui se esa guardando la api 'ce688b67bbf90c2a0236d4eb23d8c7bd',
+que despues sera utilizada
+"""
+owm = pyowm.OWM('ce688b67bbf90c2a0236d4eb23d8c7bd')
 
-
-# Will it be sunny tomorrow at this time in Milan (Italy) ?
-#forecast = owm.daily_forecast('panama')
-tomorrow = pyowm.timeutils.tomorrow()
-#forecast.will_be_sunny_at(tomorrow)  # Always True in Italy, right? ;-)
-
-# Search for current weather in London (UK)
-observation = owm.weather_at_place('ayangue')
+"""
+:var observation: Es la utilizada para buscar la cuidad o el pais.
+"""
+observation = owm.weather_at_place('argentina')
 w = observation.get_weather()
 
-rete=w.get_reference_time(timeformat='date')
-refe=w.get_reference_time('iso')
 estatus=w.get_status()
 time=w.get_sunset_time('iso')
-wind=(w.get_wind()['speed'])
-wind1=w.get_wind()
-tempe=w.get_temperature('celsius')
+viento=(w.get_wind()['speed'])
+tempe=w.get_temperature('celsius')['temp']
 tempe1=w.get_temperature('celsius')['temp_max']
+tempe2=w.get_temperature('celsius')['temp_min']
 l = observation.get_location()
 lugar = l.get_country()
+hume=w.get_humidity()
 
-                              # status=Clouds>
-
-# Weather details
-#print(forecast)
-print(lugar)
-print(w)  # <Weather - reference time=2013-12-18 09:20,
-#print(rete)
-#print(time)
-print(estatus)# status=Clouds>
-print(refe)
-#print(tomorrow)#Dia de mañana
-print(wind)#velocidad de viento
-print(wind1)
-print(w.get_humidity())#humedad
-print(tempe)#temperatura
-print(tempe1)
-#w.get_wind()                  # {'speed': 4.6, 'deg': 330}
-#w.get_humidity()              # 87
-#w.get_temperature('celsius')  # {'temp_max': 10.5, 'temp': 9.7, 'temp_min': 9.0}
+"""
+print("Lugar ",lugar)
+print("Estatus ",estatus)
+print("Viento ",viento)     #Viento
+print("Humedad ",hume)
+print("Temp normal ",tempe)        #Temp Normal
+print("Temp Max ",tempe1)       #Temp Max
+print("Temp Min ",tempe2)       #Temp Min
+"""
